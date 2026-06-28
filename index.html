@@ -1,0 +1,1773 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PharmaCare | Your Health, Our Priority</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#161c22",
+                    "inverse-surface": "#2e3134",
+                    "tertiary-fixed-dim": "#c1c7cf",
+                    "background": "#f8f9fd",
+                    "inverse-primary": "#a9c7ff",
+                    "primary-fixed-dim": "#a9c7ff",
+                    "surface": "#f8f9fd",
+                    "error-container": "#ffdad6",
+                    "outline": "#727783",
+                    "secondary-fixed-dim": "#5adf82",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#41474e",
+                    "primary-fixed": "#d6e3ff",
+                    "on-surface-variant": "#424752",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-tertiary-container": "#d4dae2",
+                    "surface-container-highest": "#e1e2e6",
+                    "tertiary": "#42484f",
+                    "inverse-on-surface": "#eff1f4",
+                    "primary": "#00478d",
+                    "on-surface": "#191c1f",
+                    "surface-variant": "#e1e2e6",
+                    "tertiary-container": "#596067",
+                    "secondary-container": "#75f999",
+                    "on-error": "#ffffff",
+                    "primary-container": "#005eb8",
+                    "on-primary-fixed": "#001b3d",
+                    "on-secondary-fixed-variant": "#005225",
+                    "secondary": "#006d33",
+                    "surface-bright": "#f8f9fd",
+                    "tertiary-fixed": "#dde3eb",
+                    "on-background": "#191c1f",
+                    "surface-container-low": "#f2f4f7",
+                    "on-secondary-fixed": "#00210b",
+                    "surface-dim": "#d8dadd",
+                    "outline-variant": "#c2c6d4",
+                    "surface-container-high": "#e6e8ec",
+                    "surface-container": "#eceef1",
+                    "secondary-fixed": "#78fc9c",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-container": "#007236",
+                    "on-primary-fixed-variant": "#00468c",
+                    "surface-tint": "#005db6",
+                    "on-primary-container": "#c8daff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "md": "24px",
+                    "sm": "12px",
+                    "margin-desktop": "64px",
+                    "base": "8px",
+                    "xl": "80px",
+                    "xs": "4px",
+                    "lg": "48px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "headline-sm": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "headline-xl": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .shadow-level-2 {
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        /* Modal Transition Styles */
+        .modal-open {
+            opacity: 1 !important;
+            pointer-events: auto !important;
+        }
+        .modal-open > div {
+            transform: scale(1) !important;
+        }
+        /* Scrollbar styles */
+        .scrollbar-thin::-webkit-scrollbar {
+            height: 6px;
+        }
+        .scrollbar-thin::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .scrollbar-thin::-webkit-scrollbar-thumb {
+            background: #e2e8f0;
+            border-radius: 9999px;
+        }
+        .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+            background: #cbd5e1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopNavBar Shell -->
+<header class="bg-surface dark:bg-inverse-surface shadow-sm sticky top-0 z-50">
+<nav class="flex justify-between items-center w-full px-gutter max-w-7xl mx-auto h-20">
+<!-- Brand -->
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary">
+                PharmaCare
+            </div>
+<!-- Search & Links (Desktop) -->
+<div class="hidden md:flex items-center gap-lg flex-1 ml-lg">
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-10 pr-4 py-2 rounded-full border-none bg-surface-container-low focus:ring-2 focus:ring-primary text-body-sm" placeholder="Search pharmacy..." type="text"/>
+</div>
+<div class="flex items-center gap-md">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors font-body-md text-body-md" href="#prescription-actions">Prescriptions</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors font-body-md text-body-md" href="#health-services">Health Hub</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors font-body-md text-body-md" href="javascript:void(0)" id="navRefillsLink">Refills</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors font-body-md text-body-md" href="#herbal-shop">Shop</a>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-md">
+<button id="headerUploadBtn" class="hidden lg:block bg-primary-container text-on-primary rounded-full px-6 py-2.5 font-label-md text-label-md hover:opacity-90 transition-opacity">
+                    Upload Prescription
+                </button>
+<div class="flex gap-sm">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors relative" id="cartBtn">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span id="cartCountBadge" class="absolute -top-0.5 -right-0.5 bg-primary text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center hidden">0</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[600px] flex items-center overflow-hidden bg-surface-container-low">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center opacity-40" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDZs0OnrOkp0RlxMewrhcsGH536NXpgk_DlymdHyvBSoV6fVxVgmaNQj3hCYii6y3Qet1QPvTMHC-45yS8XGNOjg9O3t8IXRO9CL7Ekc6Py0zO-hfQnnz92nl6b4tNQE2ULUTxZmxzjiXbuIWqBVj14ciUB-FeDLrO2FGTHzwOkao2ntdU_LKg9m8oGnJ7Pfr1PQ3gIQYb5L53E8Bt9qgn_rLhY1CFhWgln5jWBoKpxQA0yqE3cr6tEFvZrtft55f55yaK6b8CVIwBo')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-gutter grid md:grid-cols-2 gap-lg items-center">
+<div class="space-y-md">
+<span class="inline-block bg-secondary-container text-on-secondary-container px-4 py-1 rounded-full text-label-sm font-label-sm uppercase tracking-wider">Trusted Healthcare</span>
+<h1 class="font-headline-xl text-headline-xl text-on-surface max-w-lg leading-tight">Your prescriptions, managed with care.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">Experience professional pharmacy services from the comfort of your home. Fast refills, expert advice, and reliable delivery.</p>
+<div class="flex flex-col sm:flex-row gap-md pt-sm" id="prescription-actions">
+<button id="heroUploadBtn" class="flex items-center gap-md p-md bg-white border-2 border-dashed border-primary rounded-xl shadow-level-2 hover:bg-primary-fixed transition-all text-left group">
+<div class="bg-primary-container text-on-primary p-3 rounded-lg group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">upload_file</span>
+</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-primary">Upload Prescription</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Fast, secure file transfer</p>
+</div>
+</button>
+<button id="heroRefillBtn" class="flex items-center gap-md p-md bg-primary-container text-on-primary rounded-xl shadow-level-2 hover:opacity-95 transition-all text-left">
+<div class="bg-on-primary-container/20 p-3 rounded-lg">
+<span class="material-symbols-outlined text-3xl">refresh</span>
+</div>
+<div>
+<p class="font-headline-sm text-headline-sm">Refill Prescription</p>
+<p class="font-body-sm text-body-sm text-on-primary-container/80">Order your regular meds</p>
+</div>
+</button>
+</div>
+</div>
+<div class="hidden md:block">
+<div class="relative">
+<div class="absolute -inset-4 bg-primary/5 rounded-full blur-3xl animate-pulse"></div>
+<div class="relative glass-card p-lg rounded-[40px] shadow-level-2 border border-outline-variant/30">
+<div class="space-y-sm">
+<div class="flex items-center justify-between border-b border-outline-variant pb-sm">
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Next Available Consultation</p>
+<div class="flex items-center gap-xs">
+<span class="w-2 h-2 bg-secondary rounded-full animate-ping"></span>
+<span class="text-secondary font-label-sm">Live Now</span>
+</div>
+</div>
+<div class="flex items-center gap-md py-sm">
+<img alt="Dr. Sarah Mitchell" class="w-16 h-16 rounded-full object-cover ring-2 ring-primary-container" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKELXawyVOsEqCNLV7wrSxwR9l5Swhtg9_OCfTf39eJbRDjSnNEy_pJ75NSZbdGy6Bwyf_jl85WE1ZBW0wjxkHSDIXBHhVBu9Ltb23B4VtyAgu8HnPesBD9P-uRs3vOnHjdgDd7b762hRX81CsChq2nNb9V0WHPox8ag4t9w2jSerqlXjkLW4ZfkrFZeNTmwK4aas6tB6_KjsukbMT5-ALTXOXLiEPu5D0DTG9701tEKAcgO_wghttDYJkbh_HE_F7tp7O4ztPcJLG"/>
+<div>
+<p class="font-headline-sm text-headline-sm">Dr. Sarah Mitchell</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Senior Pharmacist • 12 years exp.</p>
+</div>
+</div>
+<button id="heroStartChatBtn" class="w-full py-3 bg-on-surface text-white rounded-xl font-label-md text-label-md hover:bg-primary transition-colors">
+                                    Start Free Chat
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Shop by Category -->
+<section class="py-xl bg-surface">
+<div class="max-w-7xl mx-auto px-gutter">
+<div class="flex justify-between items-end mb-lg">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Shop Categories</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Browse by health need</p>
+</div>
+<a class="text-primary font-label-md hover:underline flex items-center gap-xs" href="#">View All <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-md">
+<a class="group relative overflow-hidden rounded-2xl bg-white shadow-level-2 p-md flex flex-col items-center text-center hover:-translate-y-1 transition-all" href="#">
+<div class="w-16 h-16 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary mb-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl">medication</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface">Vitamins</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Daily wellness</p>
+</a>
+<a class="group relative overflow-hidden rounded-2xl bg-white shadow-level-2 p-md flex flex-col items-center text-center hover:-translate-y-1 transition-all" href="#">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl">healing</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface">Pain Relief</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Fast acting relief</p>
+</a>
+<a class="group relative overflow-hidden rounded-2xl bg-white shadow-level-2 p-md flex flex-col items-center text-center hover:-translate-y-1 transition-all" href="#">
+<div class="w-16 h-16 rounded-full bg-error-container/40 flex items-center justify-center text-error mb-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl">thermometer</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface">Cold &amp; Flu</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Seasonal health</p>
+</a>
+<a class="group relative overflow-hidden rounded-2xl bg-white shadow-level-2 p-md flex flex-col items-center text-center hover:-translate-y-1 transition-all" href="#">
+<div class="w-16 h-16 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary mb-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl">monitor_heart</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface">Diabetes Care</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Glucose monitoring</p>
+</a>
+<a class="group relative overflow-hidden rounded-2xl bg-white shadow-level-2 p-md flex flex-col items-center text-center hover:-translate-y-1 transition-all lg:col-span-1 md:col-span-2" href="#">
+<div class="w-16 h-16 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed-variant mb-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl">child_care</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface">Baby &amp; Child</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Nurturing care</p>
+</a>
+</div>
+</div>
+</section>
+
+<!-- Featured Medications Section -->
+<section id="herbal-shop" class="py-xl bg-surface-container-low border-t border-b border-outline-variant/20">
+  <div class="max-w-7xl mx-auto px-gutter">
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-md mb-lg">
+      <div>
+        <h2 class="font-headline-lg text-headline-lg text-on-surface">Herbal & Ayurvedic Shop</h2>
+        <p class="font-body-md text-body-md text-on-surface-variant">Discover organic herbal remedies and natural Ayurvedic formulations for holistic wellness.</p>
+      </div>
+      <div class="flex gap-2 self-stretch sm:self-auto">
+        <button id="filterAll" class="flex-1 sm:flex-none px-4 py-1.5 rounded-full text-label-sm font-label-md bg-primary text-on-primary shadow-sm hover:opacity-95 transition-all">All</button>
+        <button id="filterOTC" class="flex-1 sm:flex-none px-4 py-1.5 rounded-full text-label-sm font-label-md bg-white border border-outline-variant text-on-surface-variant hover:bg-primary/5 transition-all">Herbal OTC</button>
+        <button id="filterRx" class="flex-1 sm:flex-none px-4 py-1.5 rounded-full text-label-sm font-label-md bg-white border border-outline-variant text-on-surface-variant hover:bg-primary/5 transition-all">Specialist</button>
+      </div>
+    </div>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-md" id="medications-grid">
+      <!-- Card 1: Ashwagandha Capsules (OTC) -->
+      <div class="med-card bg-white rounded-2xl p-md shadow-level-2 border border-outline-variant/30 flex flex-col justify-between hover:-translate-y-1 transition-all duration-300" data-type="otc">
+        <div>
+          <div class="flex justify-between items-center mb-sm">
+            <span class="inline-block px-2.5 py-1 text-xs font-semibold rounded-full bg-secondary-container/30 text-on-secondary-container">Herbal OTC</span>
+            <span class="text-xs text-on-surface-variant">60 Capsules</span>
+          </div>
+          <div class="h-40 w-full overflow-hidden rounded-xl bg-surface-container-low mb-sm relative flex items-center justify-center p-2">
+            <img src="images/ashwagandha.png" alt="Ashwagandha Capsules" class="max-h-full max-w-full object-contain hover:scale-105 transition-transform duration-300">
+          </div>
+          <h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs">Ashwagandha Capsules</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant mb-md">Traditional adaptogenic herb that promotes stress relief, vitality, and natural energy levels.</p>
+        </div>
+        <div class="pt-sm border-t border-outline-variant/20 flex items-center justify-between mt-auto">
+          <div>
+            <span class="text-[10px] text-on-surface-variant block uppercase font-label-sm">Price</span>
+            <span class="text-primary font-bold text-headline-sm">₹290</span>
+          </div>
+          <button class="add-to-cart-btn bg-primary text-on-primary rounded-xl px-4 py-2 text-label-sm font-label-md hover:bg-primary-container transition-colors" data-name="Ashwagandha Capsules" data-price="290">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 2: Tulsi Ginger Tea (OTC) -->
+      <div class="med-card bg-white rounded-2xl p-md shadow-level-2 border border-outline-variant/30 flex flex-col justify-between hover:-translate-y-1 transition-all duration-300" data-type="otc">
+        <div>
+          <div class="flex justify-between items-center mb-sm">
+            <span class="inline-block px-2.5 py-1 text-xs font-semibold rounded-full bg-secondary-container/30 text-on-secondary-container">Herbal OTC</span>
+            <span class="text-xs text-on-surface-variant">25 Tea Bags</span>
+          </div>
+          <div class="h-40 w-full overflow-hidden rounded-xl bg-surface-container-low mb-sm relative flex items-center justify-center p-2">
+            <img src="images/tulsi_tea.png" alt="Tulsi Ginger Tea" class="max-h-full max-w-full object-contain hover:scale-105 transition-transform duration-300">
+          </div>
+          <h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs">Tulsi Ginger Tea</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant mb-md">A soothing, organic antioxidant-rich tea blend to support digestive comfort and immune health.</p>
+        </div>
+        <div class="pt-sm border-t border-outline-variant/20 flex items-center justify-between mt-auto">
+          <div>
+            <span class="text-[10px] text-on-surface-variant block uppercase font-label-sm">Price</span>
+            <span class="text-primary font-bold text-headline-sm">₹180</span>
+          </div>
+          <button class="add-to-cart-btn bg-primary text-on-primary rounded-xl px-4 py-2 text-label-sm font-label-md hover:bg-primary-container transition-colors" data-name="Tulsi Ginger Tea" data-price="180">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 3: Plant-Sourced Vitamin D3 (OTC) -->
+      <div class="med-card bg-white rounded-2xl p-md shadow-level-2 border border-outline-variant/30 flex flex-col justify-between hover:-translate-y-1 transition-all duration-300" data-type="otc">
+        <div>
+          <div class="flex justify-between items-center mb-sm">
+            <span class="inline-block px-2.5 py-1 text-xs font-semibold rounded-full bg-secondary-container/30 text-on-secondary-container">Herbal OTC</span>
+            <span class="text-xs text-on-surface-variant">90 Softgels</span>
+          </div>
+          <div class="h-40 w-full overflow-hidden rounded-xl bg-surface-container-low mb-sm relative flex items-center justify-center p-2">
+            <img src="images/herbal_vitamin_d3.png" alt="Plant-Sourced Vitamin D3" class="max-h-full max-w-full object-contain hover:scale-105 transition-transform duration-300">
+          </div>
+          <h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs">Plant-Sourced Vitamin D3</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant mb-md">100% natural, organic lichen-sourced Vitamin D3 to support strong bones and immune resilience.</p>
+        </div>
+        <div class="pt-sm border-t border-outline-variant/20 flex items-center justify-between mt-auto">
+          <div>
+            <span class="text-[10px] text-on-surface-variant block uppercase font-label-sm">Price</span>
+            <span class="text-primary font-bold text-headline-sm">₹320</span>
+          </div>
+          <button class="add-to-cart-btn bg-primary text-on-primary rounded-xl px-4 py-2 text-label-sm font-label-md hover:bg-primary-container transition-colors" data-name="Plant-Sourced Vitamin D3" data-price="320">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 4: Triphala Tablets (Specialist) -->
+      <div class="med-card bg-white rounded-2xl p-md shadow-level-2 border border-outline-variant/30 flex flex-col justify-between hover:-translate-y-1 transition-all duration-300" data-type="rx">
+        <div>
+          <div class="flex justify-between items-center mb-sm">
+            <span class="inline-block px-2.5 py-1 text-xs font-semibold rounded-full bg-error-container/30 text-error">Specialist</span>
+            <span class="text-xs text-on-surface-variant">60 Tablets</span>
+          </div>
+          <div class="h-40 w-full overflow-hidden rounded-xl bg-surface-container-low mb-sm relative flex items-center justify-center p-2">
+            <img src="images/triphala.png" alt="Triphala Tablets" class="max-h-full max-w-full object-contain hover:scale-105 transition-transform duration-300">
+          </div>
+          <h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs">Triphala Tablets</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant mb-md">Ayurvedic formulation of three organic fruits to gently support digestion and internal cleansing.</p>
+        </div>
+        <div class="pt-sm border-t border-outline-variant/20 flex items-center justify-between mt-auto">
+          <div>
+            <span class="text-[10px] text-on-surface-variant block uppercase font-label-sm">Price</span>
+            <span class="text-primary font-bold text-headline-sm">₹240</span>
+          </div>
+          <button class="med-refill-btn bg-secondary text-on-secondary rounded-xl px-4 py-2 text-label-sm font-label-md hover:bg-secondary/90 transition-colors" data-name="Triphala Tablets">
+            Consult Expert
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 5: Chyawanprash Special (Specialist) -->
+      <div class="med-card bg-white rounded-2xl p-md shadow-level-2 border border-outline-variant/30 flex flex-col justify-between hover:-translate-y-1 transition-all duration-300" data-type="rx">
+        <div>
+          <div class="flex justify-between items-center mb-sm">
+            <span class="inline-block px-2.5 py-1 text-xs font-semibold rounded-full bg-error-container/30 text-error">Specialist</span>
+            <span class="text-xs text-on-surface-variant">500g Jar</span>
+          </div>
+          <div class="h-40 w-full overflow-hidden rounded-xl bg-surface-container-low mb-sm relative flex items-center justify-center p-2">
+            <img src="images/chyawanprash.png" alt="Chyawanprash Special" class="max-h-full max-w-full object-contain hover:scale-105 transition-transform duration-300">
+          </div>
+          <h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs">Chyawanprash Special</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant mb-md">Concentrated blend of nutrient-rich Ayurvedic herbs and minerals to boost vitality and immunity.</p>
+        </div>
+        <div class="pt-sm border-t border-outline-variant/20 flex items-center justify-between mt-auto">
+          <div>
+            <span class="text-[10px] text-on-surface-variant block uppercase font-label-sm">Price</span>
+            <span class="text-primary font-bold text-headline-sm">₹260</span>
+          </div>
+          <button class="med-refill-btn bg-secondary text-on-secondary rounded-xl px-4 py-2 text-label-sm font-label-md hover:bg-secondary/90 transition-colors" data-name="Chyawanprash Special">
+            Consult Expert
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 6: Neem & Aloe Vera Gel (Specialist) -->
+      <div class="med-card bg-white rounded-2xl p-md shadow-level-2 border border-outline-variant/30 flex flex-col justify-between hover:-translate-y-1 transition-all duration-300" data-type="rx">
+        <div>
+          <div class="flex justify-between items-center mb-sm">
+            <span class="inline-block px-2.5 py-1 text-xs font-semibold rounded-full bg-error-container/30 text-error">Specialist</span>
+            <span class="text-xs text-on-surface-variant">150ml Tube</span>
+          </div>
+          <div class="h-40 w-full overflow-hidden rounded-xl bg-surface-container-low mb-sm relative flex items-center justify-center p-2">
+            <img src="images/neem_aloe.png" alt="Neem & Aloe Vera Gel" class="max-h-full max-w-full object-contain hover:scale-105 transition-transform duration-300">
+          </div>
+          <h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs">Neem & Aloe Vera Gel</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant mb-md">Calming herbal skin formulation combining antibacterial neem and soothing aloe for healthy skin.</p>
+        </div>
+        <div class="pt-sm border-t border-outline-variant/20 flex items-center justify-between mt-auto">
+          <div>
+            <span class="text-[10px] text-on-surface-variant block uppercase font-label-sm">Price</span>
+            <span class="text-primary font-bold text-headline-sm">₹190</span>
+          </div>
+          <button class="med-refill-btn bg-secondary text-on-secondary rounded-xl px-4 py-2 text-label-sm font-label-md hover:bg-secondary/90 transition-colors" data-name="Neem & Aloe Vera Gel">
+            Consult Expert
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Toast Notifications Container -->
+<div id="toastContainer" class="fixed bottom-6 right-6 z-[150] flex flex-col gap-2"></div>
+
+<!-- Featured Health Services Section -->
+<section id="health-services" class="py-xl bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-gutter">
+<div class="text-center mb-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Featured Health Services</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">More than just prescriptions. Book in-person screenings and vaccinations at your local PharmaCare branch.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-md">
+<div class="bg-white rounded-[2rem] overflow-hidden shadow-level-2 border border-outline-variant/30 flex flex-col">
+<div class="h-48 w-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBEVHtzeEJgOvQHRrmjMtW5hQrgUblpJ9oFwcPE0IRlPT9hM86Wcf_cOsMoVBifkZvFnps2M6UQBC9FJ96_iVHTwEEbXOiAi2o07cgqND7R905M8WSOjdrUp_ktjL4_m4fkrMEbnCEWjR6GcVdv2FZoBdhBK3UmapDRJszGkFanCxXaUeLBRoUycn5kqa2BJs7Y24BluqOmyzuw3rEWgJJHEZ01FdtPNdaSrI_l_qPaxfEbTw5huyYu3gY6mf84MMJ_XgDpNVeOtil7')"></div>
+<div class="p-md flex flex-col flex-grow">
+<div class="flex items-center gap-xs text-secondary font-label-sm mb-xs">
+<span class="material-symbols-outlined text-base">event_available</span>
+<span>Booking Open</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-sm">Annual Flu Vaccination</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-md">Protect yourself and your family this season. Appointments take just 15 minutes with our qualified pharmacists.</p>
+<button id="bookFluBtn" class="mt-auto py-2.5 border-2 border-primary text-primary font-label-md rounded-xl hover:bg-primary hover:text-white transition-all">Book Appointment</button>
+</div>
+</div>
+<div class="bg-white rounded-[2rem] overflow-hidden shadow-level-2 border border-outline-variant/30 flex flex-col">
+<div class="h-48 w-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD_FuiDF9Cc99zRyQX4xafM-hZrIPx10hXOlpJtW5E3lJDqRyoDYrCbpjfVqroLLURRhUyNLpDR0b53DgYkNa4pEoZxNt1m6TNobgEGePchVA7A4iEl8Sd_YRXGw5Wt64vdF0FYM3TMpztInlk4FhaxgEbcSPZzj5Z1eqM9qGVsVtrNj1AmR1XE5W0nNIVLcPcArJrDtBsMvNXt3utryd31AUGS29PCHjJDXqS_ut8ic9yIBh9wn_UNdT6mQp7fd7I8EEt4SD5U2O89')"></div>
+<div class="p-md flex flex-col flex-grow">
+<div class="flex items-center gap-xs text-primary font-label-sm mb-xs">
+<span class="material-symbols-outlined text-base">check_circle</span>
+<span>Free Service</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-sm">Blood Pressure Check</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-md">Keep your heart health in check. No appointment needed. Walk in anytime during pharmacy opening hours.</p>
+<button id="bookBpBtn" class="mt-auto py-2.5 border-2 border-primary text-primary font-label-md rounded-xl hover:bg-primary hover:text-white transition-all">Book Checkup</button>
+</div>
+</div>
+<div class="bg-white rounded-[2rem] overflow-hidden shadow-level-2 border border-outline-variant/30 flex flex-col">
+<div class="h-48 w-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXu1U5v4wqo0Lwpryt-QpJtkTmMYp3zMfOcxuvngT94HIabrVkAxIq_sEwD7eXTKpk-Si1onyrahLXMgCtypykV0N4uJy1gXFqwhCWNKQrgTXfSfClqQgqQ3OBt4yyidEs8XwXaV6Ty1IZeN4cwiYTajqiAaJFKrUvIpMHo1YwPH2hrckoMc3pPko6NxXrh5vlpWbAGftNmNgaAKUbO0WaI7vBQMt24DHRUJ0_DUp3ng21T-fSnQ0Yg9Z_0N2_BSVQcX4Cyctz8qyM8Q')"></div>
+<div class="p-md flex flex-col flex-grow">
+<div class="flex items-center gap-xs text-tertiary font-label-sm mb-xs">
+<span class="material-symbols-outlined text-base">forum</span>
+<span>Expert Advice</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-sm">Medication Review</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-md">Confused about your prescriptions? Book a private 1-on-1 session to review your medication plan.</p>
+<button id="bookReviewBtn" class="mt-auto py-2.5 border-2 border-primary text-primary font-label-md rounded-xl hover:bg-primary hover:text-white transition-all">Request Review</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- New Section 1: Dr Consultation Panel -->
+<section class="py-xl bg-surface">
+<div class="max-w-7xl mx-auto px-gutter">
+<div class="relative overflow-hidden rounded-[2.5rem] bg-surface-container-low border border-outline-variant/30">
+<div class="grid lg:grid-cols-2 items-center">
+<div class="p-lg md:p-xl space-y-md">
+<span class="inline-block bg-primary/10 text-primary px-4 py-1 rounded-full text-label-sm font-label-sm uppercase tracking-wider">Virtual Clinic</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Consult with a Doctor Online</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Get 24/7 access to GMC-registered GPs from the comfort of your home. Secure video consultations for prescriptions, referrals, and expert medical advice.</p>
+<ul class="space-y-sm">
+<li class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="font-body-md">Private and confidential sessions</span>
+</li>
+<li class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="font-body-md">Prescriptions sent to your local pharmacy</span>
+</li>
+</ul>
+<div class="pt-sm">
+<button id="virtualClinicBookBtn" class="bg-primary text-on-primary px-8 py-3.5 rounded-xl font-label-md hover:opacity-90 transition-all shadow-lg">Book Consultation</button>
+</div>
+</div>
+<div class="relative h-full min-h-[400px]">
+<img alt="Virtual Doctor Consultation" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgxV_AA-eWzGrzd-_obYCu_Fvbe3nMkTHK1kP5l6kpr7mo29uUSoCJkR6hKKxlcZsf5p4iSAeZ9ypDVtF75UgqdDwWy9ibtcXBeN-stWEsLuFUeIuAsgeBT5PrM3ZYcKUIhtoCBNx3M1fe39ZoeUBZPmT0ID4S7g5cbvSUyX92nJMtbQ5rfjaKsc3iNd2haRYl4B3_XeK5oBrTO5gquBGq0UmFQN8acVRUvCvo43XIWfvMTFnPE1i7Uw_KOLg3gE4FUdVIJkaBcWKu"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- New Section 2: Appointment Booking -->
+<section class="py-xl bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-gutter">
+<div class="mb-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">In-Store Appointments</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Schedule your visit for specialized clinical services.</p>
+</div>
+<div class="grid md:grid-cols-2 gap-lg bg-white rounded-[2rem] overflow-hidden shadow-level-2 border border-outline-variant/20">
+<div class="relative group">
+<img alt="Pharmacy Delivery and Branch Visit" class="w-full h-full object-cover min-h-[350px]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCASuSZCZKo1hk0KaTBUjbDmNNEKHxUU6uoc3RCYwP7WAc_3Eugyfv7mq6EsWfHUKAXwPuD4LiG-VPqN6g4qvE1k9_xbkwsKx-jOOOK1Hl0TBrl7JMN3hPCsi-ZVg1npC6l4RHF_wN65JpAdxVM4kCRJv2JRWrX4BO9-AqDIWOgeeRfOtW4BwgmDB6tWaRbCoE09ZzJzAY89gbMcgc8tGOcRYcwQVr5nhjBS9xTMsTs4z-9s2nv8bECJpBj-mssHAZ-c80OQYtK3SA2"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 to-transparent p-lg flex flex-col justify-end">
+<h3 class="text-white font-headline-md mb-xs">Find Your Nearest Branch</h3>
+<p class="text-white/80 font-body-sm">Select from over 500 locations nationwide for your in-person consultation.</p>
+</div>
+</div>
+<div class="p-lg md:p-xl flex flex-col space-y-md">
+<div>
+<p class="font-label-md text-on-surface-variant mb-sm">Select a Date</p>
+<div class="flex gap-2 overflow-x-auto pb-2 scrollbar-thin" id="instore-date-selector">
+<!-- Rendered dynamically by JavaScript -->
+</div>
+</div>
+<div>
+<p class="font-label-md text-on-surface-variant mb-sm">Available Times</p>
+<div class="grid grid-cols-3 gap-sm" id="instore-time-selector">
+<!-- Rendered dynamically by JavaScript -->
+</div>
+</div>
+<button id="inStoreConfirmBtn" class="w-full py-3 bg-on-surface text-white rounded-xl font-label-md hover:bg-primary transition-colors">Confirm Appointment</button>
+</div>
+</div>
+</div>
+</section>
+<!-- New Section 3: Sim Sell & Delivery Tracking -->
+<section class="py-xl bg-surface">
+<div class="max-w-7xl mx-auto px-gutter">
+<div class="grid lg:grid-cols-2 gap-xl items-center">
+<div class="order-2 lg:order-1">
+<div class="relative rounded-[2rem] overflow-hidden shadow-level-2">
+<img alt="PharmaSim 5G Connectivity" class="w-full h-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjjOt0VJD_QX67MqNV21MhOjLFnj5QEZEh6UecMYpVQhUizGh5gPve3CcLRn_HT_PNe_5QzZ558iLiFd3IJRGp8NRs2xcDALqSafaneq4EAlePRC5sRk31IF_b0l446UQ1fbXkCaY8umCG_yKAYp57fVE2wdwW5SJjS2HFWQfWpWYzpjpzhfCk-0tXl6Jqtm69B5l7Q1XEkhD1HjHZuKtfy72PG1SlEazJBwEOZ86oVO4H7j1iAL0VSVMzmuAUuZ0RKxQUJ18DoLvF"/>
+</div>
+</div>
+<div class="order-1 lg:order-2 space-y-md">
+<div class="flex items-center gap-xs text-secondary font-label-md">
+<span class="material-symbols-outlined">signal_cellular_alt</span>
+<span>Tech-Enabled Care</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Stay Connected with PharmaSim</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Experience seamless health management with our exclusive PharmaSim. Enjoy 5G connectivity designed for medical devices and instant health hub activation.</p>
+<div class="grid grid-cols-2 gap-md py-sm">
+<div class="space-y-xs">
+<p class="font-label-md text-on-surface">Ultrafast 5G</p>
+<p class="font-body-sm text-on-surface-variant">Reliable medical data sync</p>
+</div>
+<div class="space-y-xs">
+<p class="font-label-md text-on-surface">Instant Start</p>
+<p class="font-body-sm text-on-surface-variant">Pre-activated out of box</p>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-md pt-sm">
+<button class="w-full sm:w-auto bg-primary text-on-primary px-10 py-3.5 rounded-xl font-label-md shadow-lg hover:opacity-95 transition-all">Order Now</button>
+<a class="text-primary font-label-md hover:underline flex items-center gap-xs" href="#">
+                                Track My Order <span class="material-symbols-outlined text-base">track_changes</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Talk to a Pharmacist Banner -->
+<section class="py-xl">
+<div class="max-w-7xl mx-auto px-gutter">
+<div class="relative bg-primary-container text-on-primary rounded-[2.5rem] p-lg md:p-xl overflow-hidden">
+<div class="absolute top-0 right-0 w-1/3 h-full opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[300px] -mr-32 -mt-16 rotate-12">medical_services</span>
+</div>
+<div class="relative z-10 max-w-2xl">
+<h2 class="font-headline-lg text-headline-lg mb-sm">Have a medical question?</h2>
+<p class="font-body-lg text-body-lg text-on-primary-container mb-lg">Our licensed pharmacists are available for digital consultations 7 days a week. Private, secure, and expert advice when you need it most.</p>
+<div class="flex flex-wrap gap-md">
+<button class="bg-white text-primary px-8 py-3 rounded-full font-label-md text-label-md hover:bg-secondary-container transition-colors shadow-lg">Start Consultation</button>
+<div class="flex items-center gap-sm">
+<div class="flex -space-x-2">
+<img alt="Pharmacist" class="w-10 h-10 rounded-full border-2 border-primary-container" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZbEAsRa71rPkkPjzo-wPo0QbfkW5DZ7m7HlU0flyrDfIlVMsQpfHPthzDphO44CbC4IXv2VqaJQbOKsYx9-MGE5khRVYViRes4OfHugdXYci-LQFMLvAuHQ-XiQUwrt1lM-8IhHKbDbk4AdvdROfb-f7CJIbVfukFQmjS3M0SfdyBEObomE2fTwfZxuboYB1rZ7xm-yCGYvLeMf8tK-gsR8sNiL9dPLf98sqNBA5Si4O9iHyPw4BTrLFAuX0hvDXUDZlePqitG9iM"/>
+<img alt="Pharmacist" class="w-10 h-10 rounded-full border-2 border-primary-container" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvHO3QWlwRwyntQIsHL6ulxxyTPHPZoNliFCry4f716KA1LM8dqSX8Y5dXx7gO10bKylAQV7-hrrjf0EYVfYwNbVgDG-MiYyQRq5KTbFMu90czGltju255F2jBO4yovf2sybkkNpSe-x-nvzUAFO4B8yCWCDgSH-1cx0pH0vwuBAfJGGKy6mfIzPkJFVOirSGIPEnby3SAvFLLEgvIOCz1ZXt2uAbyeLNkvVVs-D8Fn9719OwxUTQgvR4j5X_EnQUAkkF-ft92OpF8"/>
+<img alt="Pharmacist" class="w-10 h-10 rounded-full border-2 border-primary-container" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDydUAb80CubHS38kmOp0_2lKIuB_vr5m5tBwdyigjyO4GPKO-ic8PpKMW2Omf_4S5AGUXyqImy8Ve-M7R_sAI47hLGI6WoTke59GULtnf0PN3MNzlTWXCnkof_-rY5tL99aG9GxHuGAS-Jawuzbo5GGGRfqHKN0HbtJq7gDSKQJfblzCpapZdugxDyq6up-olNBWJCZiPTK-wZYhXDmYkrEjGm96NnZWfuKDlrbmTJ2QKksxwFZ3_IkqjKGfnlmE5U2nCRsZs-q1Za"/>
+</div>
+<span class="text-body-sm">4 Pharmacists online now</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Urgent Alert Banner -->
+<div class="max-w-7xl mx-auto px-gutter pb-xl">
+<div class="bg-secondary-container/30 border border-secondary/20 rounded-2xl p-md flex items-start gap-md">
+<span class="material-symbols-outlined text-secondary">info</span>
+<div>
+<p class="font-label-md text-label-md text-on-secondary-container">Holiday Service Hours</p>
+<p class="font-body-sm text-body-sm text-on-secondary-container/80">Most pharmacies will operate on reduced hours during the upcoming bank holiday. Check your local branch before visiting.</p>
+</div>
+<button class="ml-auto p-1 text-on-secondary-container/60 hover:text-on-secondary-container transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+</div>
+<!-- Virtual Clinic Booking Modal -->
+<div id="virtualClinicModal" class="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300">
+  <div class="bg-background text-on-surface rounded-[2rem] shadow-2xl border border-outline-variant/30 max-w-2xl w-full mx-4 max-h-[90vh] flex flex-col overflow-hidden transform scale-95 transition-transform duration-300">
+    
+    <!-- Modal Header -->
+    <div class="px-8 py-6 border-b border-outline-variant/30 flex items-center justify-between bg-white">
+      <div>
+        <h3 class="font-headline-md text-headline-md text-on-surface" id="vcModalTitle">Virtual GP Consultation</h3>
+        <p class="text-body-sm text-on-surface-variant animate-pulse" id="vcModalStepIndicator">Step 1 of 5: Consultation Type</p>
+      </div>
+      <button class="p-2 rounded-full hover:bg-surface-container-high transition-colors" onclick="closeVirtualClinicModal()">
+        <span class="material-symbols-outlined text-on-surface-variant">close</span>
+      </button>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="w-full bg-surface-container-high h-1.5">
+      <div id="vcModalProgressBar" class="bg-primary h-1.5 transition-all duration-300" style="width: 20%;"></div>
+    </div>
+
+    <!-- Modal Content (Scrollable) -->
+    <div class="flex-1 overflow-y-auto p-8 space-y-6" id="vcModalContent">
+      
+      <!-- Step 1: Type Select -->
+      <div id="vcStep1" class="space-y-4">
+        <p class="font-label-md text-on-surface-variant">Select the type of consultation you need:</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <button class="flex items-start gap-4 p-4 bg-white border border-outline-variant rounded-2xl hover:border-primary hover:bg-primary/5 hover:shadow-md transition-all text-left group vc-type-card" onclick="selectVCType('general', 'General Consultation')">
+            <div class="p-3 rounded-xl bg-primary-container/20 text-primary group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-3xl">medical_services</span>
+            </div>
+            <div>
+              <p class="font-headline-sm text-headline-sm text-on-surface">General GP Care</p>
+              <p class="font-body-sm text-on-surface-variant">Medical advice, symptoms analysis, referrals.</p>
+            </div>
+          </button>
+
+          <button class="flex items-start gap-4 p-4 bg-white border border-outline-variant rounded-2xl hover:border-primary hover:bg-primary/5 hover:shadow-md transition-all text-left group vc-type-card" onclick="selectVCType('refill', 'Prescription Renewal')">
+            <div class="p-3 rounded-xl bg-secondary-container/20 text-secondary group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-3xl">prescriptions</span>
+            </div>
+            <div>
+              <p class="font-headline-sm text-headline-sm text-on-surface">Rx Refill &amp; Review</p>
+              <p class="font-body-sm text-on-surface-variant">Quick renewal of your regular medications.</p>
+            </div>
+          </button>
+
+          <button class="flex items-start gap-4 p-4 bg-white border border-outline-variant rounded-2xl hover:border-primary hover:bg-primary/5 hover:shadow-md transition-all text-left group vc-type-card" onclick="selectVCType('mental', 'Mental Health Support')">
+            <div class="p-3 rounded-xl bg-error-container/20 text-error group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-3xl">favorite</span>
+            </div>
+            <div>
+              <p class="font-headline-sm text-headline-sm text-on-surface">Mental Health Support</p>
+              <p class="font-body-sm text-on-surface-variant">Private sessions for anxiety, stress, or mood.</p>
+            </div>
+          </button>
+
+          <button class="flex items-start gap-4 p-4 bg-white border border-outline-variant rounded-2xl hover:border-primary hover:bg-primary/5 hover:shadow-md transition-all text-left group vc-type-card" onclick="selectVCType('skin', 'Skin & Dermatology')">
+            <div class="p-3 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-3xl">face</span>
+            </div>
+            <div>
+              <p class="font-headline-sm text-headline-sm text-on-surface">Skin &amp; Dermatology</p>
+              <p class="font-body-sm text-on-surface-variant">Eczema, rashes, acne, skin assessment.</p>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 2: Doctor Selection -->
+      <div id="vcStep2" class="space-y-4 hidden">
+        <p class="font-label-md text-on-surface-variant">Choose your medical practitioner:</p>
+        <div class="space-y-3" id="vcDoctorList">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+
+      <!-- Step 3: Date & Time Picker -->
+      <div id="vcStep3" class="space-y-4 hidden">
+        <p class="font-label-md text-on-surface-variant">Select an appointment slot:</p>
+        
+        <div>
+          <p class="font-body-sm text-on-surface-variant mb-2">Available Days</p>
+          <div class="flex gap-2 overflow-x-auto pb-2 scrollbar-thin" id="vcDateSelector">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+
+        <div>
+          <p class="font-body-sm text-on-surface-variant mb-2">Available Slots</p>
+          <div class="grid grid-cols-3 gap-2" id="vcTimeSlots">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 4: Patient Info Form -->
+      <div id="vcStep4" class="space-y-4 hidden">
+        <p class="font-label-md text-on-surface-variant">Please confirm your details:</p>
+        <form id="vcPatientForm" class="space-y-4" onsubmit="submitVCBooking(event)">
+          <div>
+            <label class="block text-body-sm font-label-md text-on-surface-variant mb-1" for="vc_name">Full Name</label>
+            <input type="text" id="vc_name" required class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-body-md" placeholder="John Doe">
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-body-sm font-label-md text-on-surface-variant mb-1" for="vc_email">Email Address</label>
+              <input type="email" id="vc_email" required class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-body-md" placeholder="john@example.com">
+            </div>
+            <div>
+              <label class="block text-body-sm font-label-md text-on-surface-variant mb-1" for="vc_phone">Phone Number</label>
+              <input type="tel" id="vc_phone" required class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-body-md" placeholder="+44 7123 456789">
+            </div>
+          </div>
+          <div>
+            <label class="block text-body-sm font-label-md text-on-surface-variant mb-1" for="vc_notes">Brief description of symptoms/request (optional)</label>
+            <textarea id="vc_notes" class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-body-md h-24" placeholder="e.g. Seeking repeat prescription for allergy tablets..."></textarea>
+          </div>
+        </form>
+      </div>
+
+      <!-- Step 5: Success Receipt -->
+      <div id="vcStep5" class="hidden text-center space-y-6">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-secondary-container text-secondary mb-2 animate-bounce">
+          <span class="material-symbols-outlined text-4xl">check</span>
+        </div>
+        <div>
+          <h4 class="font-headline-md text-headline-md text-on-surface">Consultation Confirmed!</h4>
+          <p class="text-body-md text-on-surface-variant">Your video consultation link has been generated and emailed to you.</p>
+        </div>
+        
+        <div class="bg-white border border-outline-variant/30 rounded-2xl p-6 text-left space-y-4 max-w-md mx-auto shadow-level-2">
+          <div class="border-b border-dashed border-outline-variant/40 pb-3 flex justify-between">
+            <span class="font-label-md text-on-surface-variant">Appointment ID</span>
+            <span class="font-mono text-body-sm text-primary font-semibold" id="vcReceiptId">VC-89021-X</span>
+          </div>
+          <div class="space-y-2">
+            <div class="flex justify-between">
+              <span class="text-body-sm text-on-surface-variant">Service Type</span>
+              <span class="text-body-sm font-label-md text-on-surface" id="vcReceiptType">General GP Care</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-body-sm text-on-surface-variant">Practitioner</span>
+              <span class="text-body-sm font-label-md text-on-surface" id="vcReceiptDoc">Dr. Sarah Mitchell</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-body-sm text-on-surface-variant">Date &amp; Time</span>
+              <span class="text-body-sm font-label-md text-on-surface" id="vcReceiptDateTime">Thu, June 25 at 10:30 AM</span>
+            </div>
+          </div>
+          <div class="pt-3 border-t border-dashed border-outline-variant/40">
+            <a id="vcMeetingLink" href="https://meet.google.com/pharma-vc-booking" target="_blank" class="flex items-center justify-center gap-2 w-full py-3 bg-secondary text-white rounded-xl font-label-md hover:opacity-90 transition-all">
+              <span class="material-symbols-outlined">video_call</span>
+              Join Video Room (Meet)
+            </a>
+          </div>
+        </div>
+        
+        <div class="flex justify-center gap-4">
+          <button class="px-6 py-2.5 border border-primary text-primary font-label-md rounded-xl hover:bg-primary/5 transition-all" onclick="downloadVCReceipt()">
+            Save Receipt
+          </button>
+          <button class="px-6 py-2.5 bg-on-surface text-white font-label-md rounded-xl hover:bg-primary transition-all" onclick="closeVirtualClinicModal()">
+            Done
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Modal Footer Navigation -->
+    <div class="px-8 py-4 border-t border-outline-variant/30 flex items-center justify-between bg-surface-container-low" id="vcModalFooter">
+      <button id="vcBackBtn" class="px-6 py-2.5 border border-outline-variant text-on-surface-variant font-label-md rounded-xl hover:bg-surface-container-high transition-colors opacity-0 pointer-events-none" onclick="vcPrevStep()">
+        Back
+      </button>
+      <button id="vcNextBtn" class="px-6 py-2.5 bg-primary text-on-primary font-label-md rounded-xl hover:opacity-90 transition-colors" onclick="vcNextStep()">
+        Continue
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<!-- In-Store Booking Modal -->
+<div id="inStoreModal" class="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300">
+  <div class="bg-background text-on-surface rounded-[2rem] shadow-2xl border border-outline-variant/30 max-w-lg w-full mx-4 max-h-[90vh] flex flex-col overflow-hidden transform scale-95 transition-transform duration-300">
+    
+    <!-- Modal Header -->
+    <div class="px-8 py-6 border-b border-outline-variant/30 flex items-center justify-between bg-white">
+      <div>
+        <h3 class="font-headline-md text-headline-md text-on-surface">Confirm Branch Appointment</h3>
+        <p class="text-body-sm text-on-surface-variant" id="isModalStepIndicator">Step 1 of 2: Details &amp; Contact</p>
+      </div>
+      <button class="p-2 rounded-full hover:bg-surface-container-high transition-colors" onclick="closeInStoreModal()">
+        <span class="material-symbols-outlined text-on-surface-variant">close</span>
+      </button>
+    </div>
+
+    <!-- Content Wrapper -->
+    <div class="flex-1 overflow-y-auto p-8 space-y-6" id="isModalContent">
+      
+      <!-- Step 1: Info Intake Form -->
+      <div id="isStep1" class="space-y-4">
+        <!-- Selection Summary Card -->
+        <div class="bg-primary/5 border border-primary/20 rounded-2xl p-4 flex gap-4 items-center">
+          <div class="p-3 bg-primary-container text-on-primary rounded-xl">
+            <span class="material-symbols-outlined text-2xl" id="isSummaryIcon">event_available</span>
+          </div>
+          <div>
+            <p class="font-headline-sm text-headline-sm text-primary" id="isSummaryService">Annual Flu Vaccination</p>
+            <p class="text-body-sm text-on-surface-variant" id="isSummaryDateTime">Thu, June 25 at 10:30 AM</p>
+            <p class="text-body-sm text-on-surface-variant">London Flagship Branch (W1B 2EL)</p>
+          </div>
+        </div>
+
+        <form id="isPatientForm" class="space-y-4" onsubmit="submitISBooking(event)">
+          <div>
+            <label class="block text-body-sm font-label-md text-on-surface-variant mb-1" for="is_service">Appointment Service Type</label>
+            <select id="is_service" class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-body-md" onchange="updateISSummaryService(this.value)">
+              <option value="Annual Flu Vaccination">Annual Flu Vaccination</option>
+              <option value="Blood Pressure Check">Blood Pressure Check</option>
+              <option value="Medication Review">Medication Review</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-body-sm font-label-md text-on-surface-variant mb-1" for="is_name">Full Name</label>
+            <input type="text" id="is_name" required class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-body-md" placeholder="John Doe">
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-body-sm font-label-md text-on-surface-variant mb-1" for="is_email">Email Address</label>
+              <input type="email" id="is_email" required class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-body-md" placeholder="john@example.com">
+            </div>
+            <div>
+              <label class="block text-body-sm font-label-md text-on-surface-variant mb-1" for="is_phone">Phone Number</label>
+              <input type="tel" id="is_phone" required class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-body-md" placeholder="+44 7123 456789">
+            </div>
+          </div>
+          <div class="flex items-start gap-2 pt-2">
+            <input type="checkbox" id="is_consent" required class="mt-1 rounded border-outline-variant text-primary focus:ring-primary">
+            <label for="is_consent" class="text-body-sm text-on-surface-variant">I confirm the patient consents to this healthcare screening service and the details provided are correct.</label>
+          </div>
+        </form>
+      </div>
+
+      <!-- Step 2: Success Receipt & Ticket -->
+      <div id="isStep2" class="hidden text-center space-y-6">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-secondary-container text-secondary mb-2 animate-bounce">
+          <span class="material-symbols-outlined text-4xl">check</span>
+        </div>
+        <div>
+          <h4 class="font-headline-md text-headline-md text-on-surface">Appointment Booked!</h4>
+          <p class="text-body-md text-on-surface-variant">Your check-in barcode has been generated. Please show this at the branch counter.</p>
+        </div>
+        
+        <!-- Virtual Ticket Card -->
+        <div class="bg-white border-2 border-primary/20 rounded-[2rem] p-6 text-left space-y-4 max-w-sm mx-auto shadow-level-2 relative overflow-hidden">
+          <!-- Top blue header bar -->
+          <div class="absolute top-0 left-0 right-0 h-2 bg-primary"></div>
+          
+          <div class="flex justify-between items-start pt-2">
+            <div>
+              <p class="text-xs text-on-surface-variant uppercase tracking-wider">In-Store Ticket</p>
+              <h5 class="font-headline-sm text-headline-sm text-on-surface" id="isReceiptService">Flu Vaccination</h5>
+            </div>
+            <span class="font-mono text-xs font-semibold px-2.5 py-1 bg-surface-container text-primary rounded-full" id="isReceiptId">IS-41092</span>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4 py-2 border-y border-dashed border-outline-variant/40">
+            <div>
+              <p class="text-[10px] text-on-surface-variant uppercase">Date &amp; Time</p>
+              <p class="text-body-sm font-label-md text-on-surface" id="isReceiptDateTime">June 25, 10:30 AM</p>
+            </div>
+            <div>
+              <p class="text-[10px] text-on-surface-variant uppercase">Location</p>
+              <p class="text-body-sm font-label-md text-on-surface">London Flagship</p>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-center justify-center pt-2 space-y-2">
+            <!-- Barcode simulation -->
+            <div class="flex gap-0.5 h-12 w-full justify-center items-stretch bg-white">
+              <div class="w-[2px] bg-black"></div><div class="w-[1px] bg-black"></div><div class="w-[3px] bg-black"></div><div class="w-[1px] bg-white"></div>
+              <div class="w-[1px] bg-black"></div><div class="w-[4px] bg-black"></div><div class="w-[2px] bg-white"></div><div class="w-[2px] bg-black"></div>
+              <div class="w-[3px] bg-black"></div><div class="w-[1px] bg-white"></div><div class="w-[1px] bg-black"></div><div class="w-[4px] bg-black"></div>
+              <div class="w-[2px] bg-white"></div><div class="w-[2px] bg-black"></div><div class="w-[1px] bg-black"></div><div class="w-[3px] bg-black"></div>
+              <div class="w-[1px] bg-white"></div><div class="w-[2px] bg-black"></div><div class="w-[4px] bg-black"></div><div class="w-[1px] bg-black"></div>
+              <div class="w-[3px] bg-black"></div><div class="w-[1px] bg-white"></div><div class="w-[2px] bg-black"></div><div class="w-[1px] bg-black"></div>
+            </div>
+            <p class="font-mono text-xs text-on-surface-variant tracking-[0.2em]">IS-41092-2026</p>
+          </div>
+        </div>
+        
+        <div class="flex justify-center gap-4">
+          <button class="px-6 py-2.5 border border-primary text-primary font-label-md rounded-xl hover:bg-primary/5 transition-all" onclick="downloadISReceipt()">
+            Save Ticket
+          </button>
+          <button class="px-6 py-2.5 bg-on-surface text-white font-label-md rounded-xl hover:bg-primary transition-all" onclick="closeInStoreModal()">
+            Done
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Modal Footer Navigation -->
+    <div class="px-8 py-4 border-t border-outline-variant/30 flex items-center justify-end bg-surface-container-low" id="isModalFooter">
+      <button id="isConfirmBtn" class="px-6 py-2.5 bg-primary text-on-primary font-label-md rounded-xl hover:opacity-90 transition-colors" onclick="isSubmitForm()">
+        Confirm &amp; Book
+      </button>
+    </div>
+
+  </div>
+</div>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-surface-container-highest dark:bg-inverse-surface border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg px-gutter py-xl max-w-7xl mx-auto">
+<!-- Brand & Copyright -->
+<div class="space-y-md">
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">PharmaCare</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">
+                    © 2024 PharmaCare. Your health, our priority. Trusted pharmaceutical services for your family.
+                </p>
+</div>
+<!-- Quick Links -->
+<div>
+<h4 class="font-label-md text-label-md text-on-surface uppercase tracking-wider mb-md">Services &amp; Hours</h4>
+<ul class="space-y-sm">
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary underline transition-colors" href="#">Pharmacy Hours</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary underline transition-colors" href="#">Location Finder</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary underline transition-colors" href="#">Health Links</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary underline transition-colors" href="#">Corporate Site</a></li>
+</ul>
+</div>
+<!-- Legal & Support -->
+<div>
+<h4 class="font-label-md text-label-md text-on-surface uppercase tracking-wider mb-md">Support</h4>
+<ul class="space-y-sm">
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary underline transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary underline transition-colors" href="#">Terms of Service</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary underline transition-colors" href="#">Delivery Information</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary underline transition-colors" href="#">Contact Support</a></li>
+</ul>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions and effects
+        document.querySelectorAll('button, a').forEach(elem => {
+            elem.addEventListener('mousedown', () => {
+                elem.classList.add('opacity-80');
+            });
+            elem.addEventListener('mouseup', () => {
+                elem.classList.remove('opacity-80');
+            });
+            elem.addEventListener('mouseleave', () => {
+                elem.classList.remove('opacity-80');
+            });
+        });
+
+        // Simple observer for reveal animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-8');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-8');
+            observer.observe(section);
+        });
+
+        // ==========================================
+        // Booking Flow & Interactive Scheduler Logic
+        // ==========================================
+
+        const DOCTORS = [
+          {
+            id: 'mitchell',
+            name: 'Dr. Sarah Mitchell',
+            role: 'Senior Pharmacist',
+            exp: '12 years exp.',
+            rating: '4.9',
+            specialties: ['general', 'refill'],
+            img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAKELXawyVOsEqCNLV7wrSxwR9l5Swhtg9_OCfTf39eJbRDjSnNEy_pJ75NSZbdGy6Bwyf_jl85WE1ZBW0wjxkHSDIXBHhVBu9Ltb23B4VtyAgu8HnPesBD9P-uRs3vOnHjdgDd7b762hRX81CsChq2nNb9V0WHPox8ag4t9w2jSerqlXjkLW4ZfkrFZeNTmwK4aas6tB6_KjsukbMT5-ALTXOXLiEPu5D0DTG9701tEKAcgO_wghttDYJkbh_HE_F7tp7O4ztPcJLG'
+          },
+          {
+            id: 'carter',
+            name: 'Dr. James Carter',
+            role: 'GP (GMC Registered)',
+            exp: '8 years exp.',
+            rating: '4.8',
+            specialties: ['general', 'mental'],
+            img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBZbEAsRa71rPkkPjzo-wPo0QbfkW5DZ7m7HlU0flyrDfIlVMsQpfHPthzDphO44CbC4IXv2VqaJQbOKsYx9-MGE5khRVYViRes4OfHugdXYci-LQFMLvAuHQ-XiQUwrt1lM-8IhHKbDbk4AdvdROfb-f7CJIbVfukFQmjS3M0SfdyBEObomE2fTwfZxuboYB1rZ7xm-yCGYvLeMf8tK-gsR8sNiL9dPLf98sqNBA5Si4O9iHyPw4BTrLFAuX0hvDXUDZlePqitG9iM'
+          },
+          {
+            id: 'rostova',
+            name: 'Dr. Elena Rostova',
+            role: 'Dermatology Specialist',
+            exp: '15 years exp.',
+            rating: '5.0',
+            specialties: ['skin'],
+            img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAvHO3QWlwRwyntQIsHL6ulxxyTPHPZoNliFCry4f716KA1LM8dqSX8Y5dXx7gO10bKylAQV7-hrrjf0EYVfYwNbVgDG-MiYyQRq5KTbFMu90czGltju255F2jBO4yovf2sybkkNpSe-x-nvzUAFO4B8yCWCDgSH-1cx0pH0vwuBAfJGGKy6mfIzPkJFVOirSGIPEnby3SAvFLLEgvIOCz1ZXt2uAbyeLNkvVVs-D8Fn9719OwxUTQgvR4j5X_EnQUAkkF-ft92OpF8'
+          }
+        ];
+
+        function getUpcomingDays(count = 7) {
+            const days = [];
+            const baseDate = new Date();
+            for (let i = 0; i < count; i++) {
+                const d = new Date();
+                d.setDate(baseDate.getDate() + i);
+                days.push({
+                    dayName: d.toLocaleDateString('en-US', { weekday: 'short' }),
+                    dayNum: d.getDate(),
+                    monthName: d.toLocaleDateString('en-US', { month: 'short' }),
+                    monthNum: d.getMonth() + 1,
+                    year: d.getFullYear(),
+                    formatted: d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })
+                });
+            }
+            return days;
+        }
+
+        const upcomingDays = getUpcomingDays(7);
+
+        // State objects
+        let instoreSelectedDate = upcomingDays[0];
+        let instoreSelectedTime = "10:30 AM";
+        let instoreSelectedService = "Annual Flu Vaccination";
+
+        let vcCurrentStep = 1;
+        let vcSelectedType = null;
+        let vcSelectedTypeName = '';
+        let vcSelectedDoctor = null;
+        let vcSelectedDate = upcomingDays[0];
+        let vcSelectedTime = null;
+
+        function getInstoreTimeSlots(dateObj) {
+            if (dateObj.dayName === 'Sun') {
+                return [
+                    { time: "10:00 AM", available: true },
+                    { time: "10:30 AM", available: false },
+                    { time: "11:00 AM", available: true },
+                    { time: "11:30 AM", available: false }
+                ];
+            }
+            if (dateObj.dayName === 'Sat') {
+                return [
+                    { time: "09:00 AM", available: true },
+                    { time: "09:30 AM", available: true },
+                    { time: "10:00 AM", available: false },
+                    { time: "10:30 AM", available: true },
+                    { time: "11:00 AM", available: true },
+                    { time: "11:30 AM", available: false },
+                    { time: "02:00 PM", available: false },
+                    { time: "02:30 PM", available: false }
+                ];
+            }
+            return [
+                { time: "09:00 AM", available: true },
+                { time: "09:30 AM", available: false },
+                { time: "10:00 AM", available: true },
+                { time: "10:30 AM", available: true },
+                { time: "11:00 AM", available: false },
+                { time: "11:30 AM", available: true },
+                { time: "02:00 PM", available: true },
+                { time: "02:30 PM", available: true },
+                { time: "03:00 PM", available: false },
+                { time: "03:30 PM", available: true },
+                { time: "04:00 PM", available: true },
+                { time: "04:30 PM", available: false }
+            ];
+        }
+
+        // --- IN STORE METHODS ---
+        function renderInstoreCalendar() {
+            const container = document.getElementById('instore-date-selector');
+            if (!container) return;
+            
+            container.innerHTML = upcomingDays.map((day, idx) => {
+                const isSelected = day.formatted === instoreSelectedDate.formatted;
+                const selectedClasses = isSelected 
+                    ? 'bg-primary text-white border-primary shadow-md scale-105' 
+                    : 'bg-white border-outline-variant hover:border-primary hover:bg-primary/5';
+                
+                return `
+                    <button type="button" class="flex flex-col items-center justify-center p-3 rounded-2xl border min-w-[75px] transition-all text-center flex-shrink-0 cursor-pointer ${selectedClasses}" onclick="selectInstoreDate(${idx})">
+                        <span class="text-xs ${isSelected ? 'text-white/80' : 'text-on-surface-variant'} font-label-sm">${day.dayName}</span>
+                        <span class="text-lg font-headline-sm font-bold">${day.dayNum}</span>
+                    </button>
+                `;
+            }).join('');
+            
+            renderInstoreSlots();
+        }
+
+        function renderInstoreSlots() {
+            const container = document.getElementById('instore-time-selector');
+            if (!container) return;
+            
+            const slots = getInstoreTimeSlots(instoreSelectedDate);
+            container.innerHTML = slots.map(slot => {
+                const isSelected = slot.time === instoreSelectedTime && slot.available;
+                const isAvailable = slot.available;
+                
+                let buttonClasses = '';
+                if (!isAvailable) {
+                    buttonClasses = 'bg-surface-container text-on-surface-variant/40 border-outline-variant/30 line-through cursor-not-allowed opacity-50';
+                } else if (isSelected) {
+                    buttonClasses = 'bg-primary/10 border-primary text-primary font-semibold font-label-md scale-102 ring-2 ring-primary/20';
+                } else {
+                    buttonClasses = 'border-outline-variant hover:border-primary hover:bg-primary/5 text-on-surface cursor-pointer';
+                }
+                
+                return `
+                    <button type="button" ${!isAvailable ? 'disabled' : ''} class="py-2.5 border rounded-xl text-body-sm transition-all text-center ${buttonClasses}" onclick="selectInstoreTime('${slot.time}')">
+                        ${slot.time}
+                    </button>
+                `;
+            }).join('');
+        }
+
+        window.selectInstoreDate = function(idx) {
+            instoreSelectedDate = upcomingDays[idx];
+            const slots = getInstoreTimeSlots(instoreSelectedDate);
+            const firstAvail = slots.find(s => s.available);
+            instoreSelectedTime = firstAvail ? firstAvail.time : '';
+            renderInstoreCalendar();
+        }
+
+        window.selectInstoreTime = function(time) {
+            instoreSelectedTime = time;
+            renderInstoreSlots();
+        }
+
+        window.openInStoreModal = function(serviceName = 'Annual Flu Vaccination') {
+            instoreSelectedService = serviceName;
+            
+            // Update summary details
+            document.getElementById('isSummaryService').textContent = instoreSelectedService;
+            document.getElementById('isSummaryDateTime').textContent = `${instoreSelectedDate.formatted} at ${instoreSelectedTime || 'Select Time'}`;
+            
+            const serviceSelect = document.getElementById('is_service');
+            if (serviceSelect) {
+                serviceSelect.value = instoreSelectedService;
+            }
+            
+            const modal = document.getElementById('inStoreModal');
+            modal.classList.add('modal-open');
+            document.body.classList.add('overflow-hidden');
+            
+            document.getElementById('isStep1').classList.remove('hidden');
+            document.getElementById('isStep2').classList.add('hidden');
+            document.getElementById('isModalStepIndicator').textContent = 'Step 1 of 2: Details & Contact';
+            document.getElementById('isModalFooter').classList.remove('hidden');
+        }
+
+        window.closeInStoreModal = function() {
+            const modal = document.getElementById('inStoreModal');
+            modal.classList.remove('modal-open');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        window.updateISSummaryService = function(value) {
+            instoreSelectedService = value;
+            document.getElementById('isSummaryService').textContent = value;
+        }
+
+        window.isSubmitForm = function() {
+            const form = document.getElementById('isPatientForm');
+            if (!form.reportValidity()) {
+                return;
+            }
+            
+            const receiptId = 'IS-' + Math.floor(10000 + Math.random() * 90000);
+            
+            document.getElementById('isReceiptService').textContent = instoreSelectedService;
+            document.getElementById('isReceiptId').textContent = receiptId;
+            document.getElementById('isReceiptDateTime').textContent = `${instoreSelectedDate.formatted}, ${instoreSelectedTime}`;
+            
+            document.getElementById('isStep1').classList.add('hidden');
+            document.getElementById('isStep2').classList.remove('hidden');
+            document.getElementById('isModalStepIndicator').textContent = 'Booking Confirmed!';
+            document.getElementById('isModalFooter').classList.add('hidden');
+            
+            triggerCelebration();
+        }
+
+        window.submitISBooking = function(e) {
+            e.preventDefault();
+            isSubmitForm();
+        }
+
+        window.downloadISReceipt = function() {
+            alert("Downloading In-Store Booking Ticket (IS-Receipt.pdf). Please show this barcode at the branch counter.");
+        }
+
+        // --- VIRTUAL CLINIC METHODS ---
+        window.openVirtualClinicModal = function(initialType = null) {
+            vcCurrentStep = 1;
+            vcSelectedType = null;
+            vcSelectedTypeName = '';
+            vcSelectedDoctor = null;
+            vcSelectedTime = null;
+            
+            const modal = document.getElementById('virtualClinicModal');
+            modal.classList.add('modal-open');
+            document.body.classList.add('overflow-hidden');
+            
+            if (initialType) {
+                const typesMap = {
+                    'general': 'General Consultation',
+                    'refill': 'Prescription Renewal',
+                    'mental': 'Mental Health Support',
+                    'skin': 'Skin & Dermatology'
+                };
+                selectVCType(initialType, typesMap[initialType] || 'General Consultation');
+            } else {
+                vcGoToStep(1);
+            }
+        }
+
+        window.closeVirtualClinicModal = function() {
+            const modal = document.getElementById('virtualClinicModal');
+            modal.classList.remove('modal-open');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        window.vcGoToStep = function(step) {
+            vcCurrentStep = step;
+            
+            for (let i = 1; i <= 5; i++) {
+                const stepDiv = document.getElementById(`vcStep${i}`);
+                if (stepDiv) stepDiv.classList.add('hidden');
+            }
+            
+            document.getElementById(`vcStep${step}`).classList.remove('hidden');
+            
+            const stepTitles = [
+                'Step 1 of 5: Consultation Type',
+                'Step 2 of 5: Choose Medical Practitioner',
+                'Step 3 of 5: Date & Time Picker',
+                'Step 4 of 5: Confirm Patient Details',
+                'Booking Confirmed!'
+            ];
+            document.getElementById('vcModalStepIndicator').textContent = stepTitles[step - 1];
+            
+            const progressPercent = step * 20;
+            document.getElementById('vcModalProgressBar').style.width = `${progressPercent}%`;
+            
+            const backBtn = document.getElementById('vcBackBtn');
+            const nextBtn = document.getElementById('vcNextBtn');
+            const footer = document.getElementById('vcModalFooter');
+            
+            if (step === 5) {
+                footer.classList.add('hidden');
+            } else {
+                footer.classList.remove('hidden');
+                
+                if (step === 1) {
+                    backBtn.classList.add('opacity-0', 'pointer-events-none');
+                } else {
+                    backBtn.classList.remove('opacity-0', 'pointer-events-none');
+                }
+                
+                if (step === 4) {
+                    nextBtn.textContent = 'Confirm & Book';
+                } else {
+                    nextBtn.textContent = 'Continue';
+                }
+                
+                validateVCStep();
+            }
+        }
+
+        window.selectVCType = function(typeCode, name) {
+            vcSelectedType = typeCode;
+            vcSelectedTypeName = name;
+            
+            const cards = document.querySelectorAll('.vc-type-card');
+            cards.forEach(card => {
+                card.classList.remove('border-primary', 'bg-primary/5', 'ring-2', 'ring-primary/10');
+            });
+            
+            vcGoToStep(2);
+            renderVCDoctors();
+        }
+
+        function renderVCDoctors() {
+            const listContainer = document.getElementById('vcDoctorList');
+            if (!listContainer) return;
+            
+            const filteredDocs = DOCTORS.filter(doc => doc.specialties.includes(vcSelectedType));
+            const docsToShow = filteredDocs.length > 0 ? filteredDocs : DOCTORS;
+            
+            listContainer.innerHTML = docsToShow.map(doc => {
+                const isSelected = vcSelectedDoctor && vcSelectedDoctor.id === doc.id;
+                const borderClass = isSelected ? 'border-primary bg-primary/5 ring-2 ring-primary/10 scale-102' : 'border-outline-variant hover:border-primary hover:bg-primary/5';
+                
+                return `
+                    <button type="button" class="flex flex-col sm:flex-row items-center gap-4 p-4 bg-white border rounded-2xl w-full text-left transition-all ${borderClass}" onclick="selectVCDoctor('${doc.id}')">
+                        <img src="${doc.img}" alt="${doc.name}" class="w-16 h-16 rounded-full object-cover ring-2 ring-primary-container">
+                        <div class="flex-grow">
+                            <div class="flex justify-between items-start">
+                                <h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">${doc.name}</h4>
+                                <div class="flex items-center gap-xs text-secondary font-label-sm">
+                                    <span class="material-symbols-outlined text-sm">star</span>
+                                    <span>${doc.rating}</span>
+                                </div>
+                            </div>
+                            <p class="text-body-sm font-label-md text-primary">${doc.role}</p>
+                            <p class="text-body-sm text-on-surface-variant">${doc.exp}</p>
+                        </div>
+                    </button>
+                `;
+            }).join('');
+        }
+
+        window.selectVCDoctor = function(docId) {
+            vcSelectedDoctor = DOCTORS.find(d => d.id === docId);
+            renderVCDoctors();
+            
+            setTimeout(() => {
+                vcGoToStep(3);
+                renderVCScheduler();
+            }, 250);
+        }
+
+        function renderVCScheduler() {
+            renderVCDateSelector();
+            renderVCTimeSlots();
+        }
+
+        function renderVCDateSelector() {
+            const container = document.getElementById('vcDateSelector');
+            if (!container) return;
+            
+            container.innerHTML = upcomingDays.map((day, idx) => {
+                const isSelected = day.formatted === vcSelectedDate.formatted;
+                const selectedClasses = isSelected 
+                    ? 'bg-primary text-white border-primary shadow-md scale-105' 
+                    : 'bg-white border-outline-variant hover:border-primary hover:bg-primary/5';
+                
+                return `
+                    <button type="button" class="flex flex-col items-center justify-center p-3 rounded-2xl border min-w-[75px] transition-all text-center flex-shrink-0 cursor-pointer ${selectedClasses}" onclick="selectVCDate(${idx})">
+                        <span class="text-xs ${isSelected ? 'text-white/80' : 'text-on-surface-variant'} font-label-sm">${day.dayName}</span>
+                        <span class="text-lg font-headline-sm font-bold">${day.dayNum}</span>
+                    </button>
+                `;
+            }).join('');
+        }
+
+        function renderVCTimeSlots() {
+            const container = document.getElementById('vcTimeSlots');
+            if (!container) return;
+            
+            const slots = [
+                { time: "09:00 AM", available: true },
+                { time: "10:00 AM", available: true },
+                { time: "10:30 AM", available: false },
+                { time: "11:00 AM", available: true },
+                { time: "02:00 PM", available: true },
+                { time: "03:30 PM", available: true },
+            ];
+            
+            container.innerHTML = slots.map(slot => {
+                const isSelected = slot.time === vcSelectedTime && slot.available;
+                const isAvailable = slot.available;
+                
+                let buttonClasses = '';
+                if (!isAvailable) {
+                    buttonClasses = 'bg-surface-container text-on-surface-variant/40 border-outline-variant/30 line-through cursor-not-allowed opacity-50';
+                } else if (isSelected) {
+                    buttonClasses = 'bg-primary/10 border-primary text-primary font-semibold font-label-md scale-102 ring-2 ring-primary/20';
+                } else {
+                    buttonClasses = 'border-outline-variant hover:border-primary hover:bg-primary/5 text-on-surface cursor-pointer';
+                }
+                
+                return `
+                    <button type="button" ${!isAvailable ? 'disabled' : ''} class="py-2.5 border rounded-xl text-body-sm transition-all text-center ${buttonClasses}" onclick="selectVCTime('${slot.time}')">
+                        ${slot.time}
+                    </button>
+                `;
+            }).join('');
+        }
+
+        window.selectVCDate = function(idx) {
+            vcSelectedDate = upcomingDays[idx];
+            vcSelectedTime = null;
+            renderVCScheduler();
+            validateVCStep();
+        }
+
+        window.selectVCTime = function(time) {
+            vcSelectedTime = time;
+            renderVCTimeSlots();
+            validateVCStep();
+            
+            setTimeout(() => {
+                vcGoToStep(4);
+            }, 250);
+        }
+
+        function validateVCStep() {
+            const nextBtn = document.getElementById('vcNextBtn');
+            if (!nextBtn) return;
+            
+            let isValid = false;
+            if (vcCurrentStep === 1) {
+                isValid = vcSelectedType !== null;
+            } else if (vcCurrentStep === 2) {
+                isValid = vcSelectedDoctor !== null;
+            } else if (vcCurrentStep === 3) {
+                isValid = vcSelectedTime !== null;
+            } else if (vcCurrentStep === 4) {
+                isValid = true;
+            }
+            
+            if (isValid) {
+                nextBtn.removeAttribute('disabled');
+                nextBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+            } else {
+                nextBtn.setAttribute('disabled', 'true');
+                nextBtn.classList.add('opacity-50', 'cursor-not-allowed');
+            }
+        }
+
+        window.vcNextStep = function() {
+            if (vcCurrentStep === 4) {
+                const form = document.getElementById('vcPatientForm');
+                if (!form.reportValidity()) return;
+                finalizeVCBooking();
+            } else {
+                vcGoToStep(vcCurrentStep + 1);
+            }
+        }
+
+        window.vcPrevStep = function() {
+            if (vcCurrentStep > 1) {
+                vcGoToStep(vcCurrentStep - 1);
+            }
+        }
+
+        function finalizeVCBooking() {
+            const receiptId = 'VC-' + Math.floor(10000 + Math.random() * 90000) + '-X';
+            
+            document.getElementById('vcReceiptId').textContent = receiptId;
+            document.getElementById('vcReceiptType').textContent = vcSelectedTypeName;
+            document.getElementById('vcReceiptDoc').textContent = vcSelectedDoctor.name;
+            document.getElementById('vcReceiptDateTime').textContent = `${vcSelectedDate.formatted} at ${vcSelectedTime}`;
+            
+            vcGoToStep(5);
+            triggerCelebration();
+        }
+
+        window.submitVCBooking = function(e) {
+            e.preventDefault();
+            finalizeVCBooking();
+        }
+
+        window.downloadVCReceipt = function() {
+            alert("Downloading Virtual GP Consultation Receipt (VC-Receipt.pdf). The details have been sent to your email.");
+        }
+
+        // --- SUCCESS EFFECTS ---
+        function triggerCelebration() {
+            const canvas = document.createElement('canvas');
+            canvas.style.position = 'fixed';
+            canvas.style.top = '0';
+            canvas.style.left = '0';
+            canvas.style.width = '100vw';
+            canvas.style.height = '100vh';
+            canvas.style.pointerEvents = 'none';
+            canvas.style.zIndex = '999';
+            document.body.appendChild(canvas);
+            
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            const particles = [];
+            const colors = ['#00478d', '#006d33', '#75f999', '#a9c7ff', '#ba1a1a'];
+            
+            for (let i = 0; i < 120; i++) {
+                particles.push({
+                    x: window.innerWidth / 2,
+                    y: window.innerHeight / 2 - 100,
+                    radius: Math.random() * 6 + 4,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    vx: (Math.random() - 0.5) * 14,
+                    vy: (Math.random() - 0.5) * 14 - 4,
+                    gravity: 0.3,
+                    alpha: 1,
+                    decay: Math.random() * 0.015 + 0.01
+                });
+            }
+            
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                let active = false;
+                particles.forEach(p => {
+                    if (p.alpha > 0) {
+                        active = true;
+                        p.x += p.vx;
+                        p.y += p.vy;
+                        p.vy += p.gravity;
+                        p.alpha -= p.decay;
+                        
+                        ctx.save();
+                        ctx.globalAlpha = p.alpha;
+                        ctx.fillStyle = p.color;
+                        ctx.beginPath();
+                        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                        ctx.fill();
+                        ctx.restore();
+                    }
+                });
+                
+                if (active) {
+                    requestAnimationFrame(animate);
+                } else {
+                    canvas.remove();
+                }
+            }
+            
+            animate();
+        }
+
+        // --- TOAST NOTIFICATIONS ---
+        function showToast(message, type = 'success') {
+            const container = document.getElementById('toastContainer');
+            if (!container) return;
+            
+            const toast = document.createElement('div');
+            toast.className = `flex items-center gap-3 px-4 py-3 rounded-xl shadow-lg border text-body-sm transition-all duration-300 translate-y-4 opacity-0`;
+            
+            if (type === 'success') {
+                toast.className += ` bg-secondary-container text-on-secondary-container border-secondary/20`;
+            } else {
+                toast.className += ` bg-primary-container text-on-primary border-primary/20`;
+            }
+            
+            toast.innerHTML = `
+                <span class="material-symbols-outlined text-xl">${type === 'success' ? 'check_circle' : 'info'}</span>
+                <span>${message}</span>
+            `;
+            
+            container.appendChild(toast);
+            
+            // Animate in
+            setTimeout(() => {
+                toast.classList.remove('translate-y-4', 'opacity-0');
+            }, 50);
+            
+            // Animate out and remove
+            setTimeout(() => {
+                toast.classList.add('translate-y-4', 'opacity-0');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        // --- MOCK RX UPLOAD ---
+        function triggerMockUpload(medName) {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*,application/pdf';
+            input.onchange = e => {
+                const file = e.target.files[0];
+                if (file) {
+                    showToast(`Prescription file "${file.name}" uploaded successfully for ${medName}!`, 'success');
+                }
+            };
+            input.click();
+        }
+
+        // --- PAGE START ---
+        document.addEventListener('DOMContentLoaded', () => {
+            renderInstoreCalendar();
+            
+            const heroBtn = document.getElementById('heroStartChatBtn');
+            if (heroBtn) {
+                heroBtn.addEventListener('click', () => openVirtualClinicModal('general'));
+            }
+            
+            const vcBtn = document.getElementById('virtualClinicBookBtn');
+            if (vcBtn) {
+                vcBtn.addEventListener('click', () => openVirtualClinicModal());
+            }
+            
+            const bookFluBtn = document.getElementById('bookFluBtn');
+            if (bookFluBtn) {
+                bookFluBtn.addEventListener('click', () => openInStoreModal('Annual Flu Vaccination'));
+            }
+            
+            const bookBpBtn = document.getElementById('bookBpBtn');
+            if (bookBpBtn) {
+                bookBpBtn.addEventListener('click', () => openInStoreModal('Blood Pressure Check'));
+            }
+            
+            const bookReviewBtn = document.getElementById('bookReviewBtn');
+            if (bookReviewBtn) {
+                bookReviewBtn.addEventListener('click', () => openInStoreModal('Medication Review'));
+            }
+            
+            const isConfirmBtn = document.getElementById('inStoreConfirmBtn');
+            if (isConfirmBtn) {
+                isConfirmBtn.addEventListener('click', () => {
+                    openInStoreModal(instoreSelectedService);
+                });
+            }
+
+            // Header Upload button click handler
+            const headerUploadBtn = document.getElementById('headerUploadBtn');
+            if (headerUploadBtn) {
+                headerUploadBtn.addEventListener('click', () => {
+                    triggerMockUpload('Header Prescription');
+                });
+            }
+
+            // Hero Upload button click handler
+            const heroUploadBtn = document.getElementById('heroUploadBtn');
+            if (heroUploadBtn) {
+                heroUploadBtn.addEventListener('click', () => {
+                    triggerMockUpload('Hero Prescription');
+                });
+            }
+
+            // Hero Refill button click handler
+            const heroRefillBtn = document.getElementById('heroRefillBtn');
+            if (heroRefillBtn) {
+                heroRefillBtn.addEventListener('click', () => {
+                    openVirtualClinicModal('refill');
+                });
+            }
+
+            // Navbar Refills link click handler
+            const navRefillsLink = document.getElementById('navRefillsLink');
+            if (navRefillsLink) {
+                navRefillsLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openVirtualClinicModal('refill');
+                });
+            }
+
+            // --- SHOP INTEGRATION LOGIC ---
+            let cartCount = 0;
+            const badge = document.getElementById('cartCountBadge');
+            
+            // Add to Cart handler
+            document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const name = btn.getAttribute('data-name');
+                    cartCount++;
+                    if (badge) {
+                        badge.textContent = cartCount;
+                        badge.classList.remove('hidden');
+                        
+                        // Bounce animation on badge
+                        badge.classList.remove('scale-110');
+                        void badge.offsetWidth; // Trigger reflow
+                        badge.classList.add('scale-110');
+                    }
+                    showToast(`${name} has been added to your shopping cart!`, 'success');
+                });
+            });
+
+            // Refill Rx / Consult Expert handler
+            document.querySelectorAll('.med-refill-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const name = btn.getAttribute('data-name');
+                    openVirtualClinicModal('refill');
+                    // Pre-fill symptom notes with the Ayurvedic medicine name
+                    setTimeout(() => {
+                        const notesField = document.getElementById('vc_notes');
+                        if (notesField) {
+                            notesField.value = `Ayurvedic consultation and formulation request for ${name}.`;
+                        }
+                    }, 500);
+                });
+            });
+
+            // Upload Rx handler (fallback)
+            document.querySelectorAll('.med-upload-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const name = btn.getAttribute('data-name');
+                    triggerMockUpload(name);
+                });
+            });
+
+            // Filter logic
+            const filterAll = document.getElementById('filterAll');
+            const filterOTC = document.getElementById('filterOTC');
+            const filterRx = document.getElementById('filterRx');
+            const medCards = document.querySelectorAll('.med-card');
+
+            function setActiveFilter(activeBtn, type) {
+                [filterAll, filterOTC, filterRx].forEach(btn => {
+                    if (btn) {
+                        btn.className = 'flex-1 sm:flex-none px-4 py-1.5 rounded-full text-label-sm font-label-md bg-white border border-outline-variant text-on-surface-variant hover:bg-primary/5 transition-all';
+                    }
+                });
+                if (activeBtn) {
+                    activeBtn.className = 'flex-1 sm:flex-none px-4 py-1.5 rounded-full text-label-sm font-label-md bg-primary text-on-primary shadow-sm hover:opacity-95 transition-all';
+                }
+
+                medCards.forEach(card => {
+                    const cardType = card.getAttribute('data-type');
+                    if (type === 'all' || cardType === type) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+
+            if (filterAll) filterAll.addEventListener('click', () => setActiveFilter(filterAll, 'all'));
+            if (filterOTC) filterOTC.addEventListener('click', () => setActiveFilter(filterOTC, 'otc'));
+            if (filterRx) filterRx.addEventListener('click', () => setActiveFilter(filterRx, 'rx'));
+        });
+    </script>
+</body></html>
